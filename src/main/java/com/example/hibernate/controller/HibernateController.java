@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @RestController
 public class HibernateController {
-    private HibernateService service;
+    private final HibernateService service;
 
     public HibernateController(HibernateService service){
         this.service = service;

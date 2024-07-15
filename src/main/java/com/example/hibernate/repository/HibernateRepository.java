@@ -10,14 +10,14 @@ import java.util.Optional;
 
 @Repository
 public class HibernateRepository {
-    @PersistenceContext
-    private EntityManager entityManager;
-
     private CRUDRepository crudRepository;
 
     public HibernateRepository(CRUDRepository crudRepository){
         this.crudRepository = crudRepository;
     }
+
+    @PersistenceContext
+    private EntityManager entityManager;
 
     @Transactional
     public List<Persons> getPersonsByCity(String city){
