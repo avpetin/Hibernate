@@ -24,7 +24,7 @@ public class HibernateController {
     @PostMapping("/persons")
     @ResponseStatus(code = HttpStatus.OK)
     public Object savePerson(@RequestBody Persons person) {
-        return service.savePersons(person);
+        return service.save(person);
     }
 
     @GetMapping("/persons/by-id")

@@ -21,7 +21,7 @@ public class HibernateService {
         return repository.getPersonsByCity(city);
     }
 
-    public Object savePersons(Persons persons) {
+    public Object save(Persons persons) {
         return repository.save(persons);
     }
 

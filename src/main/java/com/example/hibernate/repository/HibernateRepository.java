@@ -1,5 +1,6 @@
 package com.example.hibernate.repository;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,9 +11,10 @@ import java.util.Optional;
 
 @Repository
 public class HibernateRepository {
-    private CRUDRepository crudRepository;
+    @Autowired
+    private final CrudRepository crudRepository;
 
-    public HibernateRepository(CRUDRepository crudRepository){
+    public HibernateRepository(CrudRepository crudRepository){
         this.crudRepository = crudRepository;
     }
 
@@ -29,7 +31,7 @@ public class HibernateRepository {
     }
 
     @Transactional
-    public Persons save(Persons persons){
+    public Object save(Persons persons){
         return crudRepository.save(persons);
     }
 
